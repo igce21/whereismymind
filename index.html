@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="icon" href="img/logo.png" type="image/x-icon">
+  <title>Where is my mind</title>
+  <!-- Preload critical assets -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <!-- Modal Video Player -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal-container">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-video-wrapper">
+        <video id="modalVideo" class="modal-video" playsinline loop>
+          <source src="VIDEO COMMENT ACHETER" type="video/mp4">
+        </video>
+        <div class="video-controls">
+          <div class="progress-bar">
+            <div class="progress-bar-filled"></div>
+            <input type="range" class="progress-seek" value="0" min="0" max="100" step="0.1">
+          </div>
+          <div class="time-display">
+            <span class="current-time">0:00</span>
+            <span class="duration">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="splash-screen">
+    <div class="splash-background"></div>
+    <div class="overlay"></div>
+    <div class="splash-content">
+      <img src="img/accessrestriced.png" alt="Access Restricted" class="access-restricted" loading="eager">
+      <img src="img/confirm.png" alt="Confirm Button" class="confirm-button" id="confirmButton" loading="eager">
+
+              <!-- Countdown Timer -->
+              <div class="countdown-container" id="countdown">
+                <div class="countdown-item">
+                  <div class="countdown-value" id="days">00</div>
+                  <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-value" id="hours">00</div>
+                  <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-value" id="minutes">00</div>
+                  <div class="countdown-label">Mins</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-value" id="seconds">00</div>
+                  <div class="countdown-label">Secs</div>
+                </div>
+              </div>
+              
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Top infinite scroll text -->
+    <div class="scroll-container top" role="button" tabindex="0" aria-label="Click to copy text">
+      <div class="scroll-text">
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+      </div>
+      <div class="copy-notification" aria-live="polite">Copied!</div>
+    </div>
+
+    <header class="hero">
+      <div class="video-container">
+        <video loop playsinline muted id="bgVideo" class="desktop-video" preload="metadata">
+          <source src="img/video.mp4" type="video/mp4" media="(min-width: 769px)">
+        </video>
+        <video loop playsinline muted id="bgVideoMobile" class="mobile-video" preload="metadata">
+          <source src="img/video2.mp4" type="video/mp4" media="(max-width: 768px)">
+        </video>
+        <div class="overlay"></div>
+      </div>
+      <div class="content">
+        <img src="img/mind.png" alt="MIND LOGO" class="logo" id="mainLogo" loading="eager">
+      </div>
+    </header>
+
+    <!-- Bottom infinite scroll text -->
+    <div class="scroll-container bottom" role="button" tabindex="0" aria-label="Click to copy text">
+      <div class="scroll-text">
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+        <span>$MIND</span>
+      </div>
+      <div class="copy-notification" aria-live="polite">Copied!</div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="img/launchingsoon.png" alt="Launching Soon" class="launching-soon" id="launchingSoon" loading="lazy">
+        
+        <div class="social-links">
+          <a href="https://x.com/MindOfficial01" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-link">
+            <img src="img/X.png" alt="X" class="social-icon">
+          </a>
+          <a href="https://t.me/whereismymindsol" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="social-link">
+            <img src="img/tg.png" alt="Telegram" class="social-icon">
+          </a>
+          <a href="https://dexscreener.com/solana/..." target="_blank" rel="noopener noreferrer" aria-label="Dex" class="social-link">
+            <img src="img/dex.png" alt="Dex" class="social-icon">
+          </a>
+          <a href="https://pump.fun/coin/..." target="_blank" rel="noopener noreferrer" aria-label="Pump" class="social-link">
+            <img src="img/pump.png" alt="Pump" class="social-icon">
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <button id="audioToggle" class="audio-toggle" aria-label="Toggle audio">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="volume-on">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="volume-off hidden">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- Background music -->
+  <audio id="backgroundAudio" loop preload="none">
+    <source src="song/whereismymind.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Logo click sound effect -->
+  <audio id="soundChaching" preload="none">
+    <source src="song/click.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('bgVideo');
+      const videoMobile = document.getElementById('bgVideoMobile');
+      const audioToggle = document.getElementById('audioToggle');
+      const volumeOn = audioToggle.querySelector('.volume-on');
+      const volumeOff = audioToggle.querySelector('.volume-off');
+      const splashScreen = document.querySelector('.splash-screen');
+      const container = document.querySelector('.container');
+      const confirmButton = document.getElementById('confirmButton');
+      const videoContainer = document.querySelector('.video-container');
+      const content = document.querySelector('.content');
+      const backgroundAudio = document.getElementById('backgroundAudio');
+      const mainLogo = document.getElementById('mainLogo');
+      const soundChaching = document.getElementById('soundChaching');
+      const socialLinks = document.querySelectorAll('.social-link');
+      const scrollContainers = document.querySelectorAll('.scroll-container');
+
+      // Modal and video player elements
+      const videoModal = document.getElementById('videoModal');
+      const modalVideo = document.getElementById('modalVideo');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const launchingSoon = document.getElementById('launchingSoon');
+      const progressBar = document.querySelector('.progress-bar-filled');
+      const progressSeek = document.querySelector('.progress-seek');
+      const currentTimeDisplay = document.querySelector('.current-time');
+      const durationDisplay = document.querySelector('.duration');
+
+      // Countdown Timer
+      const daysElement = document.getElementById('days');
+      const hoursElement = document.getElementById('hours');
+      const minutesElement = document.getElementById('minutes');
+      const secondsElement = document.getElementById('seconds');
+      
+      // Set the launch date
+      const launchDate = new Date('April 27, 2025 21:00:00').getTime();
+      
+      // Update countdown every second
+      const countdownTimer = setInterval(function() {
+        // Get current date and time
+        const now = new Date().getTime();
+        
+        // Find the time remaining
+        const timeRemaining = launchDate - now;
+        
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        
+        // Update the HTML elements
+        daysElement.textContent = String(days).padStart(2, '0');
+        hoursElement.textContent = String(hours).padStart(2, '0');
+        minutesElement.textContent = String(minutes).padStart(2, '0');
+        secondsElement.textContent = String(seconds).padStart(2, '0');
+        
+        // If countdown is finished
+        if (timeRemaining < 0) {
+          clearInterval(countdownTimer);
+          daysElement.textContent = '00';
+          hoursElement.textContent = '00';
+          minutesElement.textContent = '00';
+          secondsElement.textContent = '00';
+        }
+      }, 1000);
+      
+      // Format time in minutes:seconds
+      const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        seconds = Math.floor(seconds % 60);
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+      };
+
+      // Update progress bar and time display
+      const updateProgress = () => {
+        if (!modalVideo.duration) return;
+        
+        const progress = (modalVideo.currentTime / modalVideo.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressSeek.value = progress;
+        
+        currentTimeDisplay.textContent = formatTime(modalVideo.currentTime);
+        durationDisplay.textContent = formatTime(modalVideo.duration);
+      };
+
+      // Handle seeking
+      progressSeek.addEventListener('input', (e) => {
+        const time = (modalVideo.duration / 100) * e.target.value;
+        modalVideo.currentTime = time;
+        progressBar.style.width = `${e.target.value}%`;
+      });
+
+      // Update progress bar as video plays
+      modalVideo.addEventListener('timeupdate', updateProgress);
+
+      // Set initial duration once metadata is loaded
+      modalVideo.addEventListener('loadedmetadata', () => {
+        durationDisplay.textContent = formatTime(modalVideo.duration);
+      });
+
+      // Modal functionality
+      const handleCloseModal = () => {
+        videoModal.classList.remove('active');
+        modalVideo.pause();
+      };
+
+      const handleOpenModal = () => {
+        videoModal.classList.add('active');
+        modalVideo.currentTime = 0;
+        modalVideo.play();
+        playChachingSound();
+      };
+
+      launchingSoon.addEventListener('click', handleOpenModal);
+      modalCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        handleCloseModal();
+      });
+
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          handleCloseModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          handleCloseModal();
+        }
+      });
+
+      // Function to play chaching sound
+      const playChachingSound = () => {
+        soundChaching.currentTime = 0;
+        soundChaching.play();
+      };
+
+      // Logo click handler with animation
+      mainLogo.addEventListener('click', () => {
+        playChachingSound();
+        mainLogo.classList.add('clicked');
+        
+        setTimeout(() => {
+          mainLogo.classList.remove('clicked');
+        }, 600);
+      });
+
+      // Add click handler to social links
+      socialLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          playChachingSound();
+        });
+      });
+
+      // Scroll container click-to-copy functionality
+      scrollContainers.forEach(container => {
+        const copyText = "$MIND";
+        const notification = container.querySelector('.copy-notification');
+        let timeout;
+
+        const showNotification = () => {
+          notification.classList.add('show');
+          if (timeout) clearTimeout(timeout);
+          timeout = setTimeout(() => {
+            notification.classList.remove('show');
+          }, 2000);
+        };
+
+        const handleCopy = async (e) => {
+          e.preventDefault();
+          try {
+            await navigator.clipboard.writeText(copyText);
+            playChachingSound();
+            showNotification();
+          } catch (err) {
+            console.error('Failed to copy text:', err);
+          }
+        };
+
+        container.addEventListener('click', handleCopy);
+        container.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleCopy(e);
+          }
+        });
+      });
+
+      // Optimize video loading
+      const loadVideo = () => {
+        const currentVideo = window.innerWidth > 768 ? video : videoMobile;
+        if (currentVideo) {
+          currentVideo.load();
+        }
+      };
+
+      // Function to play videos (silently)
+      const playVideos = async () => {
+        try {
+          const currentVideo = window.innerWidth > 768 ? video : videoMobile;
+          if (currentVideo) {
+            await currentVideo.play();
+          }
+        } catch (error) {
+          console.error('Error playing video:', error);
+        }
+      };
+
+      // Function to play background audio
+      const playBackgroundAudio = async () => {
+        try {
+          backgroundAudio.loop = true; // Ensure loop is enabled
+          await backgroundAudio.play();
+          volumeOn.classList.remove('hidden');
+          volumeOff.classList.add('hidden');
+        } catch (error) {
+          console.error('Error playing audio:', error);
+        }
+      };
+
+      // Audio control functions
+      const muteAudio = () => backgroundAudio.volume = 0;
+      const unmuteAudio = () => backgroundAudio.volume = 1;
+
+      // Handle confirm button click with optimized loading
+      confirmButton.addEventListener('click', async function() {
+        // Play the cha-ching sound
+        playChachingSound();
+        
+        // Show container first
+        container.classList.add('visible');
+        
+        // Load video before playing
+        loadVideo();
+        
+        // Fade out splash screen
+        requestAnimationFrame(() => {
+          splashScreen.classList.add('hidden');
+        });
+
+        // Play media with slight delay to ensure smooth transition
+        setTimeout(async () => {
+          await playVideos();
+          await playBackgroundAudio();
+        }, 100);
+      });
+
+      // Optimized audio toggle
+      audioToggle.addEventListener('click', function() {
+        if (backgroundAudio.volume === 0) {
+          unmuteAudio();
+          volumeOn.classList.remove('hidden');
+          volumeOff.classList.add('hidden');
+        } else {
+          muteAudio();
+          volumeOn.classList.add('hidden');
+          volumeOff.classList.remove('hidden');
+        }
+      });
+
+      // Logo proximity scaling with enhanced effect
+      const handleLogoProximity = (e) => {
+        if (window.innerWidth <= 768) return; // Disable on mobile
+
+        const rect = mainLogo.getBoundingClientRect();
+        const logoCenter = {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2
+        };
+
+        // Calculate distance from cursor to logo center
+        const distance = Math.hypot(
+          e.clientX - logoCenter.x,
+          e.clientY - logoCenter.y
+        );
+
+        // Increased maximum distance for wider effect range
+        const maxDistance = Math.max(window.innerWidth, window.innerHeight);
+        // Enhanced maximum scale for more noticeable effect
+        const maxScale = 1.15;
+        // Minimum scale to maintain some scaling even at max distance
+        const minScale = 1.02;
+
+        // Calculate scale with improved curve
+        const scale = Math.max(
+          minScale,
+          maxScale - (Math.pow(distance / maxDistance, 0.75) * (maxScale - minScale))
+        );
+
+        mainLogo.style.setProperty('--logo-scale', scale);
+      };
+
+      // Optimized parallax effect using requestAnimationFrame
+      let ticking = false;
+      document.addEventListener('mousemove', (e) => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            
+            const xPercent = (clientX - innerWidth / 2) / (innerWidth / 2);
+            const yPercent = (clientY - innerHeight / 2) / (innerHeight / 2);
+            
+            const videoTransform = `
+              translate3d(${xPercent * -20}px, ${yPercent * -20}px, 0)
+              rotateX(${yPercent * 2}deg)
+              rotateY(${xPercent * -2}deg)
+            `;
+            
+            const contentTransform = `
+              translate3d(${xPercent * 7.5}px, ${yPercent * 7.5}px, 15px)
+              rotateX(${yPercent * 1}deg)
+              rotateY(${xPercent * -1}deg)
+            `;
+            
+            videoContainer.style.transform = videoTransform;
+            content.style.transform = contentTransform;
+
+            // Handle logo proximity scaling
+            handleLogoProximity(e);
+            
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
